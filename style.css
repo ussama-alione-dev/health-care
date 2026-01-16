@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #55de8a;
+  --white-color: #fff;
+  --radius: 0.5rem;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  cursor: pointer;
+}
+
+main header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+main header h2 span {
+  color: var(--primary-color);
+}
+main header button {
+  padding: 0.5rem;
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: var(--radius);
+  transition: 0.3s;
+}
+main header button:hover {
+  background-color: #44ce79;
+}
+.section--1 {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--primary-color);
+  border-radius: var(--radius);
+}
+.section--1 img {
+  width: 200px;
+  border: 1px solid var(--primary-color);
+  border-radius: var(--radius);
+}
+.section--1 h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.section--1 form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.section--1 form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+.section--1 form label {
+  margin-bottom: 0.5rem;
+}
+.section--1 form input {
+  padding: 0.5rem;
+  border: none;
+  background: #d9d9d930;
+  border-radius: var(--radius);
+}
+.section--1 form input:focus {
+  outline: var(--primary-color) 1px solid;
+}
+
+.section--1 form button {
+  background-color: var(--primary-color);
+  padding: 0.5rem;
+  border: none;
+  color: var(--white-color);
+  border-radius: var(--radius);
+}
+.section--1 form button:hover {
+  background-color: #44ce79;
+}
+
+.section--2 {
+  /* border: 1px solid var(--primary-color); */
+  padding: 1rem;
+  border-radius: var(--radius);
+  min-height: 25rem;
+  position: relative;
+}
+.section--2 h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+thead {
+  background-color: #44ce791f;
+}
+
+td,
+th {
+  text-align: start;
+  padding: 0.5rem;
+}
+
+td {
+  color: rgba(0, 0, 0, 0.495);
+}
+table {
+  overflow: hidden;
+  width: 100%;
+  border-collapse: collapse;
+}
+table button {
+  border: none;
+  margin: 0.2rem;
+  padding: 0.3rem;
+  border-radius: var(--radius);
+  transition: 0.3s;
+}
+table button:hover {
+  background: rgba(128, 128, 128, 0.249);
+}
+tr {
+  border: 1px solid rgba(128, 128, 128, 0.308);
+}
+.hide {
+  display: none;
+}
+
+.message {
+  text-align: center;
+  margin-bottom: 1rem;
+  border-radius: var(--radius);
+  padding: 0.5rem;
+  animation: slideIn 0.2s ease-out;
+  position: relative;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.error {
+  color: red;
+  border: 1px solid red;
+  background-color: rgba(255, 0, 0, 0.087);
+}
+
+.success {
+  color: rgb(92, 216, 92);
+  border: 1px solid rgb(92, 216, 92);
+  background-color: rgba(0, 128, 0, 0.08);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+.pagination-btn {
+  border: none;
+  background-color: var(--primary-color);
+  padding: 0.3rem;
+  border-radius: var(--radius);
+  font-size: 0.8rem;
+  color: var(--white-color);
+}
+
+button:disabled {
+  background-color: rgba(128, 128, 128, 0.434);
+  cursor: not-allowed;
+}
+.pages {
+  color: var(--primary-color);
+}
+
+@media (max-width: 450px) {
+  main header {
+  }
+  .section--1 {
+    flex-direction: column;
+  }
+  .section--1 img {
+    display: none;
+  }
+}
