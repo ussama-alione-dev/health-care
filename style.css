@@ -196,14 +196,3 @@ button:disabled {
 .pages {
   color: var(--primary-color);
 }
-
-@media (max-width: 450px) {
-  main header {
-  }
-  .section--1 {
-    flex-direction: column;
-  }
-  .section--1 img {
-    display: none;
-  }
-}

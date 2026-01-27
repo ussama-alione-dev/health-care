@@ -1,78 +1,78 @@
 let demandes = [
   {
-    id: 1,
+    id: 100,
     nom: "El Amrani",
     prenom: "Yassine",
     telephone: "0612345678",
     email: "yassine.elamrani@gmail.com",
     motif: "consultation",
-    date: "2026-01-10",
+    date: "2022-01-10",
   },
   {
-    id: 2,
+    id: 101,
     nom: "Benali",
     prenom: "Sara",
     telephone: "0623456789",
     email: "sara.benali@gmail.com",
     motif: "controle",
-    date: "2026-01-11",
+    date: "2022-01-11",
   },
   {
-    id: 3,
+    id: 102,
     nom: "Haddad",
     prenom: "Amine",
     telephone: "0634567890",
     email: "amine.haddad@gmail.com",
     motif: "urgence",
-    date: "2026-01-12",
+    date: "2023-01-2",
   },
   {
-    id: 4,
+    id: 103,
     nom: "Fassi",
     prenom: "Khadija",
     telephone: "0645678901",
     email: "khadija.fassi@gmail.com",
     motif: "consultation",
-    date: "2026-01-12",
+    date: "2024-01-02",
   },
   {
-    id: 5,
+    id: 104,
     nom: "Alaoui",
     prenom: "Hamza",
     telephone: "0656789012",
     email: "hamza.alaoui@gmail.com",
     motif: "analyse",
-    date: "2026-01-13",
+    date: "2003-3-3",
   },
   {
-    id: 6,
+    id: 105,
     nom: "Ziani",
     prenom: "Imane",
     telephone: "0667890123",
     email: "imane.ziani@gmail.com",
     motif: "controle",
-    date: "2026-01-13",
+    date: "2000-03-10",
   },
   {
-    id: 7,
+    id: 106,
     nom: "Raji",
     prenom: "Mehdi",
     telephone: "0678901234",
     email: "mehdi.raji@gmail.com",
     motif: "consultation",
-    date: "2026-01-14",
+    date: "2025-10-10",
   },
   {
-    id: 8,
+    id: 107,
     nom: "Tahiri",
     prenom: "Salma",
     telephone: "0689012345",
     email: "salma.tahiri@gmail.com",
     motif: "urgence",
-    date: "2026-01-14",
+    date: "2000-11-11",
   },
   {
-    id: 9,
+    id: 108,
     nom: "Aliouane",
     prenom: "Oussama",
     telephone: "0643016364",
@@ -81,7 +81,7 @@ let demandes = [
     date: "2026-01-14",
   },
   {
-    id: 10,
+    id: 109,
     nom: "Bennani",
     prenom: "Anas",
     telephone: "0690123456",
@@ -90,7 +90,7 @@ let demandes = [
     date: "2026-01-15",
   },
   {
-    id: 11,
+    id: 110,
     nom: "Chafik",
     prenom: "Nadia",
     telephone: "0601234567",
@@ -99,7 +99,7 @@ let demandes = [
     date: "2026-01-15",
   },
   {
-    id: 12,
+    id: 111,
     nom: "Kabbaj",
     prenom: "Ayoub",
     telephone: "0613456789",
@@ -108,7 +108,7 @@ let demandes = [
     date: "2026-01-16",
   },
   {
-    id: 13,
+    id: 112,
     nom: "Lahlou",
     prenom: "Hajar",
     telephone: "0624567891",
@@ -117,16 +117,16 @@ let demandes = [
     date: "2026-01-16",
   },
   {
-    id: 14,
+    id: 113,
     nom: "Saidi",
     prenom: "Rachid",
     telephone: "0635678912",
-    email: "rachid.saidi@gmail.com",
+    email: "rachid.scrypto.randomUUID() ,di@crypto.randomUUID() ,ail.com",
     motif: "analyse",
     date: "2026-01-17",
   },
   {
-    id: 15,
+    id: 114,
     nom: "Mernissi",
     prenom: "Ikram",
     telephone: "0646789123",
@@ -135,7 +135,7 @@ let demandes = [
     date: "2026-01-17",
   },
   {
-    id: 16,
+    id: 115,
     nom: "Mernissi",
     prenom: "Ikram",
     telephone: "0646789123",
@@ -203,23 +203,42 @@ function createAndShowMessage(message, type) {
 function ajouterDemande(event) {
   event.preventDefault();
 
-  const nom = document.querySelector("#nom").value;
-  const prenom = document.querySelector("#prenom").value;
-  const telephone = document.querySelector("#telephone").value;
-  const email = document.querySelector("#email").value;
-  const motif = document.querySelector("#motif").value;
-  const date = document.querySelector(".date").value;
+  const nom = document.querySelector("#nom");
+  const prenom = document.querySelector("#prenom");
+  const telephone = document.querySelector("#telephone");
+  const email = document.querySelector("#email");
+  const motif = document.querySelector("#motif");
+  const date = document.querySelector(".date");
 
-  console.log(telRegex.test(telephone));
-  console.log(emailRegex.test(email));
+  nom.style.border = "";
+  prenom.style.border = "";
+  telephone.style.border = "";
+  email.style.border = "";
+  motif.style.border = "";
+  date.style.border = "";
+
+  const validNom = nom.value;
+  const validPrenom = prenom.value;
+  const validTele = telRegex.test(telephone.value);
+  const validEmail = emailRegex.test(email.value);
+  const validDate = date.value;
+  const validMotif = motif.value;
+
+  !validNom && (nom.style.border = "1px solid red");
+  !validEmail && (email.style.border = "1px solid red");
+  !validPrenom && (prenom.style.border = "1px solid red");
+  !validMotif && (motif.style.border = "1px solid red");
+  !validTele && (telephone.style.border = "1px solid red");
+  !validDate && (date.style.border = "1px solid red");
 
   if (
-    !nom ||
-    !prenom ||
-    !motif ||
-    !date ||
-    !telRegex.test(telephone) ||
-    !emailRegex.test(email)
+    !validNom ||
+    !validEmail ||
+    !validPrenom ||
+    !validDate ||
+    !validTele ||
+    !validEmail ||
+    !validMotif
   ) {
     createAndShowMessage("svp entrer les format valide des champs !", "error");
     return;
@@ -287,11 +306,10 @@ function updatePagination() {
     next.disabled = true;
   }
 
-  document.querySelector(
-    ".pagination-result"
-  ).innerHTML = `<span class="pages">${currentPage}</span><span>/${Math.ceil(
-    demandes.length / 5
-  )}</span>`;
+  document.querySelector(".pagination-result").innerHTML =
+    `<span class="pages">${currentPage}</span><span>/${Math.ceil(
+      demandes.length / 5,
+    )}</span>`;
 }
 
 afficherLesDemandes();
